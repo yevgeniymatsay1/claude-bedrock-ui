@@ -2,13 +2,13 @@ import { BedrockRuntimeClient, ConverseStreamCommand } from "@aws-sdk/client-bed
 import { NextRequest, NextResponse } from "next/server";
 
 // Initialize Bedrock client
+// Uses default credential provider chain (IAM roles, env vars, etc.)
 const getBedrockClient = () => {
   return new BedrockRuntimeClient({
     region: process.env.AWS_REGION || "us-east-1",
-    credentials: {
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "",
-    },
+    // credentials will be automatically picked up from:
+    // 1. Environment variables (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY) in local dev
+    // 2. IAM role when running in AWS Amplify
   });
 };
 

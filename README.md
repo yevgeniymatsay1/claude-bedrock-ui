@@ -2,6 +2,8 @@
 
 A simple, production-ready web interface for chatting with Claude via AWS Bedrock. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
+[![Deploy Status](https://img.shields.io/badge/deploy-amplify-orange)](https://aws.amazon.com/amplify/)
+
 ## Features
 
 - **Model Selection**: Switch between Claude Sonnet 4.5 and Opus 4.1

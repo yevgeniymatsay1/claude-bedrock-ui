@@ -43,8 +43,8 @@ export async function POST(req: NextRequest) {
 
     // Map model names to Bedrock model IDs
     const modelIds: Record<string, string> = {
-      "sonnet-4.5": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-      "opus-4.1": "us.anthropic.claude-opus-4-20250514-v1:0",
+      "sonnet-4.5": "anthropic.claude-sonnet-4-5-20250929-v1:0",
+      "opus-4.1": "anthropic.claude-opus-4-1-20250805-v1:0",
     };
 
     const modelId = modelIds[model as string] || modelIds["sonnet-4.5"];
